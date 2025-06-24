@@ -95,22 +95,24 @@
         }
 
         function createNewHash(seed) {
-            let total = seed ? parseInt(seed) : 0;
+
+            let total = seed ? BigInt(seed) : 0n;
             const arr = Array.from(symbols);
             const n = arr.length;
             
             if (n === 0) return "";
 
-            const a = 1664525;
-            const c = 1013904223;
-            const m = 2**32;
-            
+            const a = 1664525n;
+            const c = 1013904223n;
+            const m = 2n**32n;
+
             for (let i = n - 1; i > 0; i--) {
                 total = (a * total + c) % m;
-                const r = total % (i + 1);
+
+                const r = Number(total % BigInt(i + 1));
                 [arr[i], arr[r]] = [arr[r], arr[i]];
             }
-            
+
             for (let i = 0; i < arr.length; i++) {
                 if (arr[i] === '\n') {
                     arr[i] = '@';
@@ -125,7 +127,6 @@
             const text = element.textContent.replace(/^Generated seed: |^New hash: /, '');
             
             navigator.clipboard.writeText(text).then(() => {
-                // Show temporary feedback
                 const originalText = element.textContent;
                 element.textContent += " (Copied!)";
                 setTimeout(() => {
