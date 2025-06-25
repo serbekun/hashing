@@ -53,14 +53,30 @@
         .result-text {
             flex-grow: 1;
         }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Hash Generator</h1>
-        <label for="oldHash">Input old hash to create new hash:</label>
-        <input type="text" id="oldHash" size="50">
-        <button onclick="generateHash()">Generate New Hash</button>
+        
+        <div class="input-group">
+            <label for="oldHash">Input old hash to create new hash:</label>
+            <input type="text" id="oldHash" size="50">
+            <button onclick="generateHash()">Generate New Hash</button>
+        </div>
+        
+        <div class="input-group">
+            <label for="manualSeed">Or input seed manually:</label>
+            <input type="text" id="manualSeed" size="50">
+            <button onclick="generateHashFromSeed()">Generate Hash from Seed</button>
+        </div>
         
         <div class="result">
             <div class="result-container">
@@ -75,7 +91,7 @@
     </div>
 
     <script>
-        const symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.?! \n";
+        const symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.?!- \n";
 
         function initArrayWithNumber() {
             const charToCode = {};
@@ -95,7 +111,6 @@
         }
 
         function createNewHash(seed) {
-
             let total = seed ? BigInt(seed) : 0n;
             const arr = Array.from(symbols);
             const n = arr.length;
@@ -145,6 +160,14 @@
             document.getElementById('seedOutput').textContent = `Generated seed: ${seed}`;
             
             const newHash = createNewHash(seed);
+            document.getElementById('hashOutput').textContent = `New hash: ${newHash}`;
+        }
+
+        function generateHashFromSeed() {
+            const manualSeed = document.getElementById('manualSeed').value;
+            document.getElementById('seedOutput').textContent = `Generated seed: ${manualSeed}`;
+            
+            const newHash = createNewHash(manualSeed);
             document.getElementById('hashOutput').textContent = `New hash: ${newHash}`;
         }
     </script>

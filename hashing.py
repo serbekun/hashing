@@ -1,4 +1,4 @@
-symbols1 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.?! \n"
+symbols1 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.?!- \n"
 symbols2 = "WuQakwFp?NyY4eB7AMR.bOSlZ6 G9VjIvtThqg12@fXd3J5CnzKrHPxsL8o!iEUc0Dm"
 
 INPUT_FILENAME = "hashing_dot_file/input.txt"

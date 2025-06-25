@@ -1,4 +1,4 @@
-symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.?! \n"
+symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.?!- \n"
 
 def init_array_with_number():
     return {char: f"{index:02d}" for index, char in enumerate(symbols)}
