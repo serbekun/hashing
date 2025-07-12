@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hash Generator</h1>
+        
+        <div class="input-group">
+            <label for="oldHash">Input old hash to create new hash:</label>
+            <input type="text" id="oldHash" size="50">
+            <button onclick="generateHash()">Generate New Hash</button>
+        </div>
+        
+        <div class="input-group">
+            <label for="manualSeed">Or input seed manually:</label>
+            <input type="text" id="manualSeed" size="50">
+            <button onclick="generateHashFromSeed()">Generate Hash from Seed</button>
+        </div>
+        
+        <div class="result">
+            <div class="result-container">
+                <div class="result-text" id="seedOutput">Generated seed: </div>
+                <button class="copy-btn" onclick="copyToClipboard('seedOutput')">Copy</button>
+            </div>
+            <div class="result-container">
+                <div class="result-text" id="hashOutput">New hash: </div>
+                <button class="copy-btn" onclick="copyToClipboard('hashOutput')">Copy</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

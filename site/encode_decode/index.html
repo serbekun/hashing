@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Encoder/Decoder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h2>Encoder / Decoder</h2>
+
+  <label>Input text:</label>
+  <textarea id="inputText" placeholder="Enter your text..."></textarea>
+  <button onclick="copyInput()">Copy Input</button>
+
+  <br>
+
+  <button onclick="doEncode()">Encode</button>
+  <button onclick="doDecode()">Decode</button>
+  <button onclick="copyResult()">Copy Result</button>
+
+  <div class="output" id="outputText"></div>
+
+  <label>Character mapping table (symbols2):</label>
+  <input type="text" id="symbolsInput" placeholder="Enter symbols2...">
+
+  <script src="script.js"></script>
+</body>
+</html>
