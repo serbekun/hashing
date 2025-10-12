@@ -18,3 +18,6 @@ encode and decode text from file
 'con_gen_hash.py' but type in html
 - encode_decode.html
 'hashing.py' but type in html
+
+# Links
+- [site with encode photo](https://serbekun.github.io/hashing)
